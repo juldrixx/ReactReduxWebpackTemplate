@@ -62,3 +62,6 @@ typings/
 
 # file create by the application
 tmp/
+
+# file create by the production mode
+dist/
