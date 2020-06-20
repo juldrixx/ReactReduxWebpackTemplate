@@ -1,5 +1,6 @@
-$midnight-blue: #2c3e50;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400");
+@import "~antd/dist/antd.css";
 
-body {
-  background-color: $midnight-blue;
+* {
+  box-sizing: border-box;
 }

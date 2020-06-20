@@ -1,11 +1,14 @@
-const Dotenv = require('dotenv-webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
-    new Dotenv({
-      path: './.env.production',
-    })
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Production',
+      template: './src/index.html'
+    }),
   ],
 };

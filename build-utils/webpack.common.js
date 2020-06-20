@@ -1,8 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -17,8 +16,29 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.s[ac]ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader']
+      },
+      {
+        test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+          }
+        }]
+      },
+      {
+        test: /\.(jpe?g|gif|png|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000
+            }
+          }
+        ]
       },
     ]
   },
@@ -32,14 +52,10 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "styles.css"
     }),
-    new HtmlWebpackPlugin({
-      title: 'Hello Webpack bundled JavaScript Project',
-      template: './src/index.html'
-    })
+    new FaviconsWebpackPlugin('./src/assets/img/favicon.jpg'),
   ],
   devServer: {
     contentBase: './dist',
