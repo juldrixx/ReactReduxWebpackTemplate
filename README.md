@@ -2,7 +2,7 @@
 
 ## Description
 
-A template for a react redux webpack project with saga and sass.
+A template for a react redux webpack project with thunk, saga and sass.
 
 ## Installation
 
