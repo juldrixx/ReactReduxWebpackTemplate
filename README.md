@@ -1,4 +1,4 @@
-# Templace REACT REDUX WEBPACK
+# Template REACT REDUX WEBPACK
 
 ## Description
 
