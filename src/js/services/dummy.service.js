@@ -1,18 +1,16 @@
-export const dummyService = {
-  get,
-}
-
 function get() {
   return new Promise((resolve, reject) => {
-    fetch('https://loripsum.net/api')
-      .then(result => {
-        return result.text();
-      })
-      .then(result => {
+    fetch('https://baconipsum.com/api/?type=meat-and-filler')
+      .then((result) => result.text())
+      .then((result) => {
         resolve({ dummyResult: result });
       })
-      .catch(error => {
+      .catch((error) => {
         reject(error);
       });
   });
 }
+
+export default {
+  get,
+};

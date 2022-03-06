@@ -2,14 +2,13 @@
 
 ## Description
 
-A template for a react redux webpack project with thunk, saga and sass.
+A template for a react redux webpack project with thunk and sass.
 
 ## Installation
 
-Create 2 files:
+Create 1 file:
 
-- `.env.development`: environment variables for development mode
-- `.env.production`: environment variables for production mode
+- `.env`: environment variables
 
 ## Start
 

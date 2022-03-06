@@ -2,4 +2,6 @@
 // Name your file: XXXX.actions.js
 // And export it with: export * from './XXXX.actions'
 
-export * from './dummy.actions'
+import dummyActions from './dummy.actions';
+
+export default { dummyActions };

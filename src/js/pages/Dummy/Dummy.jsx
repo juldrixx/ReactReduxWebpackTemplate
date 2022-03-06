@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { dummyActions } from '../actions';
+import actions from '../../actions';
 
 class DummyPage extends Component {
 
@@ -37,7 +37,7 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    dummyGet: () => dispatch(dummyActions.dummyGet()),
+    dummyGet: () => dispatch(actions.dummyActions.dummyGet()),
   };
 }
 

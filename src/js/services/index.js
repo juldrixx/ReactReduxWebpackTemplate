@@ -1,1 +1,3 @@
-export * from './dummy.service';
+import dummyService from './dummy.service';
+
+export default { dummyService };

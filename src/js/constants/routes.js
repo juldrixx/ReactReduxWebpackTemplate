@@ -1,17 +1,56 @@
 import React from 'react';
 import {
-  DummyPage,  
+  DashboardPage,
+  DetailsPage,
+  DummyPage,
+  HomePage,
+  ListingPage,
+  LoginPage,
+  ProfilePage,
+  ErrorPage,
 } from '../pages';
 
-const pages = {
-  DummyPage: (props) => <DummyPage {...props} />,
-}
-
-export const routes = [
-  // Dummy
+export default [
   {
+    name: 'Home',
+    element: <HomePage />,
     path: '/',
-    exact: true,
-    component: pages.DummyPage,
+  },
+  {
+    name: 'Login',
+    element: <LoginPage />,
+    path: '/login',
+  },
+  {
+    name: 'Dasboard',
+    element: <DashboardPage />,
+    path: '/dasboard',
+  },
+  {
+    name: 'Listing',
+    element: <ListingPage />,
+    path: '/list',
+  },
+  {
+    name: 'Profile',
+    element: <ProfilePage />,
+    path: '/me',
+    children: [
+      {
+        name: 'Details',
+        element: <DetailsPage />,
+        path: '/me/details',
+      },
+    ],
+  },
+  {
+    name: 'Dummy',
+    element: <DummyPage />,
+    path: '/dummy',
+  },
+  {
+    name: 'Error',
+    element: <ErrorPage />,
+    path: '/error',
   },
 ];
