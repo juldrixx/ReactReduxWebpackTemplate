@@ -26,6 +26,5 @@ COPY /docker-entrypoint.d/* /docker-entrypoint.d/
 RUN chmod a+x /docker-entrypoint.d/*
 ONBUILD COPY /docker-entrypoint.d/* /docker-entrypoint.d/
 ONBUILD RUN chmod a+x /docker-entrypoint/*
-RUN ls -la /docker-entrypoint.d/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
