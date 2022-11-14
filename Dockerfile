@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM node:17.6.0 as build
+FROM node:19.1.0 as build
 
 WORKDIR /usr/src/app
 
