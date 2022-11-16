@@ -5,9 +5,9 @@ import rootReducer from '../reducers';
 
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = configureStore(
-  rootReducer,
-  storeEnhancers(applyMiddleware(thunk))
-);
+const store = configureStore({
+  reducer: rootReducer,
+  enhancers: storeEnhancers(applyMiddleware(thunk)),
+});
 
 export default store;
