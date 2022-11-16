@@ -43,7 +43,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   plugins: [
-    new ESLintPlugin(),
+    new ESLintPlugin({ extensions: ['js', 'jsx'] }),
     new MiniCssExtractPlugin({
       filename: 'styles.css'
     }),
