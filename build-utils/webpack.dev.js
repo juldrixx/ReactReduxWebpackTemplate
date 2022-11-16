@@ -1,11 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [],
   devServer: {
     static: path.resolve(__dirname, '..', './dist'),
     hot: true,
