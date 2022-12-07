@@ -8,13 +8,13 @@ function Profile() {
       <nav>
         <ul>
           <li>
-            <Link to='/me/details'>Details</Link>
+            <Link to="/me/details">Details</Link>
           </li>
         </ul>
       </nav>
       <Outlet />
     </>
-  )
+  );
 }
 
 export default Profile;
